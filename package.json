@@ -1,0 +1,91 @@
+{
+    "name": "nest-tutorial",
+    "version": "0.0.1",
+    "description": "",
+    "author": "",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+        "build": "nest build",
+        "db:drop": "npm run typeorm -- schema:drop",
+        "db:migration:generate": "cross-var npm run typeorm -- migration:generate ./src/migrations/$npm_config_name",
+        "db:migration:revert": "npm run typeorm -- migration:revert",
+        "db:migration:run": "npm run typeorm -- migration:run",
+        "db:migration:show": "npm run typeorm -- migration:show",
+        "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+        "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+        "start": "cross-env NODE_ENV=development nest start",
+        "start:debug": "cross-env NODE_ENV=development nest start --debug --watch",
+        "start:dev": "nodemon",
+        "start:prod": "cross-env NODE_ENV=production node dist/main",
+        "test": "jest",
+        "test:cov": "jest --coverage",
+        "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+        "test:e2e": "jest --config ./test/jest-e2e.json",
+        "test:watch": "jest --watch",
+        "typeorm": "typeorm-ts-node-commonjs -d ./src/config/orm.config.ts"
+    },
+    "dependencies": {
+        "@nestjs/common": "^11.1.9",
+        "@nestjs/config": "^4.0.2",
+        "@nestjs/core": "^11.1.9",
+        "@nestjs/mapped-types": "*",
+        "@nestjs/platform-express": "^11.1.9",
+        "@nestjs/typeorm": "^11.0.0",
+        "find-config": "^1.0.0",
+        "mysql2": "^3.15.3",
+        "pg": "^8.16.3",
+        "reflect-metadata": "^0.2.2",
+        "rxjs": "^7.8.2",
+        "sqlite3": "^5.1.7",
+        "typeorm": "^0.3.28"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^3.3.3",
+        "@eslint/js": "^9.39.1",
+        "@nestjs/cli": "^11.0.14",
+        "@nestjs/schematics": "^11.0.9",
+        "@nestjs/testing": "^11.1.9",
+        "@types/express": "^5.0.6",
+        "@types/find-config": "^1.0.4",
+        "@types/jest": "^30.0.0",
+        "@types/node": "^25.0.0",
+        "@types/pg": "^8.16.0",
+        "@types/supertest": "^6.0.3",
+        "clear-cli": "^2.0.0",
+        "cross-env": "^10.1.0",
+        "cross-var": "^1.1.0",
+        "eslint": "^9.39.1",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.4",
+        "globals": "^16.5.0",
+        "jest": "^30.2.0",
+        "nodemon": "^3.1.11",
+        "prettier": "^3.7.4",
+        "source-map-support": "^0.5.21",
+        "supertest": "^7.1.4",
+        "ts-jest": "^29.4.6",
+        "ts-loader": "^9.5.4",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.49.0"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "ts"
+        ],
+        "rootDir": "src",
+        "testRegex": ".*\\.spec\\.ts$",
+        "transform": {
+            "^.+\\.(t|j)s$": "ts-jest"
+        },
+        "collectCoverageFrom": [
+            "**/*.(t|j)s"
+        ],
+        "coverageDirectory": "../coverage",
+        "testEnvironment": "node"
+    }
+}

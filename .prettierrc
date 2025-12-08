@@ -1,0 +1,29 @@
+{
+    "endOfLine": "auto",
+    "overrides": [
+        {
+            "files": ["*.*js", "*.*ts"],
+            "options": {
+                "bracketSpacing": true,
+                "arrowParens": "always",
+                "experimentalOperatorPosition": "start",
+                "experimentalTernaries": false,
+                "quoteProps": "as-needed",
+                "semi": true,
+                "singleQuote": true,
+                "trailingComma": "none"
+            }
+        },
+        {
+            "files": ["*.yaml", "*.yml"],
+            "options": {
+                "singleQuote": false,
+                "bracketSpacing": false
+            }
+        }
+    ],
+    "printWidth": 100,
+    "proseWrap": "preserve",
+    "tabWidth": 4,
+    "useTabs": false
+}

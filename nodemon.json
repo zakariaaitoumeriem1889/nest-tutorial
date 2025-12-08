@@ -1,0 +1,8 @@
+{
+    "$schema": "https://www.schemastore.org/nodemon.json",
+    "colours": true,
+    "exec": "cross-env NODE_ENV=development \"clear && nest start --watch\"",
+    "verbose": true,
+    "watch": [".env"],
+    "ignore": ["./docker-compose.yml"]
+}
